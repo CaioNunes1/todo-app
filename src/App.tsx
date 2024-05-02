@@ -8,24 +8,24 @@ import AddTask from './components/AddTask'
 function App() {
   const[showAddTask,setShowAddTask]=useState(false)
   const [tasks,setTask]=useState([
-    {
-      id:1,
-      text:"Horário Doutor",
-      day:"29 abril ás 14:00",
-      reminder:true,
-    },
-    {
-      id:2,
-      text:"Entrevista emprego",
-      day:"29 abril ás 10:00",
-      reminder:true,
-    },
-    {
-      id:3,
-      text:"Treino",
-      day:"29 abril ás 18:30",
-      reminder:true,
-    }
+    // {
+    //   id:1,
+    //   text:"Horário Doutor",
+    //   day:"29 abril ás 14:00",
+    //   reminder:true,
+    // },
+    // {
+    //   id:2,
+    //   text:"Entrevista emprego",
+    //   day:"29 abril ás 10:00",
+    //   reminder:true,
+    // },
+    // {
+    //   id:3,
+    //   text:"Treino",
+    //   day:"29 abril ás 18:30",
+    //   reminder:true,
+    // }
   ])
 
   //Delete Tasks function
