@@ -1,14 +1,24 @@
 
 import { useState } from 'react'
 
+interface TaskInterface{
+  text:string;
+  day:string;
+  reminder:boolean;
+}
 
-const AddTask = ({onAdd}) => {
+interface propFunc{
+  onAdd:(task:TaskInterface)=>void;
+}
+
+
+const AddTask: React.FC<propFunc>= ({onAdd}) => {
 
   const[text,setText]= useState('')
   const[day,setDay]=useState('')
   const[reminder,setReminder]=useState(false)
 
-  const onSubmit = (e) =>{//quando o formulário é submetido, ele também chama o onAdd
+  const onSubmit = (e:React.FormEvent<HTMLFormElement>) =>{//quando o formulário é submetido, ele também chama o onAdd
     e.preventDefault()// Impede o comportamento padrão do formulário (recarregar a página)
 
     if(!text){// se quando for escrever, sair e não escrever nada, aparece esse alerta

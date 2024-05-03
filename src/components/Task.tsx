@@ -1,6 +1,18 @@
 import { FaTimes } from "react-icons/fa"
 
-const Task = ({task,onDelete, onToggled}) => {
+interface TaskInterface{
+  id:number
+  text:string;
+  day:string;
+  reminder:boolean;
+}
+
+interface propsTask{
+  task:TaskInterface
+  onDelete: (id: number) => void;
+  onToggled: (id: number) => void;
+}
+const Task: React.FC<propsTask>= ({task,onDelete, onToggled}) => {
     //em click, ele retorna no App e chamar deleteTask
 
     //no classname chama o css de task e ${task.reminder ? 'reminder':'' } fala o seguinte, 

@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-function Header({title, onAdd,showAdd}) {
+interface HeaderProps{
+  title:string;
+  onAdd:()=>void;
+  showAdd:boolean
+}
+
+const Header: React.FC<HeaderProps> =({title, onAdd,showAdd}) =>{
 
   return (
     <div>

@@ -1,5 +1,19 @@
 import Task from "./Task"
-const Tasks = ({tasks,onDelete,onToggled}) => {
+
+interface TaskfromTasks {
+  id: number;
+  text: string;
+  day: string;
+  reminder: boolean;
+}
+
+interface TasksProps {
+  tasks: TaskfromTasks[];
+  onDelete: (id: number) => void;
+  onToggled: (id: number) => void;
+}
+
+const Tasks: React.FC<TasksProps> = ({ tasks, onDelete, onToggled }) => {
   
   return (
     <div>

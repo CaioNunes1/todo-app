@@ -1,6 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-const Button = ({color,text, onClick}) => {
+
+interface ButtonProps{
+  color:string;
+  text:string;
+  onClick:()=>void;
+}
+
+const Button: React.FC<ButtonProps> = ({color,text, onClick}) => {
 
 
   return (
@@ -10,9 +17,7 @@ const Button = ({color,text, onClick}) => {
   )
 }
 
-Button.defaltProps={
-    color:'green',
-}
+
 
 Button.prototype={
     text:PropTypes.string,
