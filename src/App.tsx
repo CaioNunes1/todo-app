@@ -14,6 +14,12 @@ function App() {
     reminder: boolean;
   }
 
+  interface TaskOnAdd{
+    text: string;
+    day: string;
+    reminder: boolean;
+  }
+
   const[showAddTask,setShowAddTask]=useState(false)
   const [tasks,setTask]=useState<Task[]>([
     // {
@@ -48,7 +54,7 @@ function App() {
   }//aqui nesse setTask, ele vai procurar o id que das tasks que foi clicado, e quando encontrar vai copiar todas as tasks novamente
   //porém vai mudar o reminder da task que foi clicada, e se não achar a task retorna ela normalmente
 
-  const addTask = (newTask: Task) => {
+  const addTask = (newTask: TaskOnAdd) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     const taskWithId = { id, ...newTask };
     setTask([...tasks, taskWithId]);
